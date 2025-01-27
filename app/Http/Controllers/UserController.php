@@ -29,4 +29,11 @@ class UserController extends Controller
         ]);
         return redirect()->route('users.index');
     }
+
+    public function destroy($id)
+    {
+        //hapus data produk
+        DB::table('users')->where('id', $id)->delete();
+        return redirect()->route('users.index');
+    }
 }

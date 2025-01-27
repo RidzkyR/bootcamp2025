@@ -23,9 +23,15 @@
                             <th scope="row">{{ $index + 1 }}</th>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>
+                            <td class="d-flex gap-2 justify-content-center">
                                 <button type="button" class="btn btn-warning">Edit</button>
-                                <button type="button" class="btn btn-danger">Hapus</button>
+
+                                <form action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+
                             </td>
                         </tr>
                     @endforeach
