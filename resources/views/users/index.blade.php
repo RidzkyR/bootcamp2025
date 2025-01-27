@@ -4,7 +4,7 @@
         {{-- // judul tabel data user --}}
         <div class="container d-flex justify-content-between my-2">
             <h3>Data User</h3>
-            <button type="button" class="btn btn-success">Tambah Data</button>
+            <a href="{{ route('users.create') }}" class="btn btn-success">Tambah Data</a>
         </div>
         {{-- // tabel data user --}}
         <div class="card">
